@@ -4,40 +4,40 @@ using namespace std;
 using namespace sf;
 
 
-Game::Game()
+Game::Game()//zaidimo konstruktorius
 {
-    Reset();
+    Reset();//inicializuoja zaidima
 }
 
-void Game::Update()
+void Game::Update()//zaidimo busenos atnaujinimas
 {
     if (!snake.alive) return;
 
-    timer += timeStep;
+    timer += timeStep;//padidina laikmati
 
-    if (timer >= 1.0f / snake.speed)
+    if (timer >= 1.0f / snake.speed)// tikrina, ar laikas gyvatei judeti
     {
-        snake.Move();
+        snake.Move();//perkelti gyvate
 
-        if (snake.GetHead() == food.position)
+        if (snake.GetHead() == food.position)//tikrina susidurima su maistu
         {
-            snake.Grow();
-            food.Respawn(snake.body);
+            snake.Grow();//padidina snake
+            food.Respawn(snake.body);//perkelia maista
         }
 
-        timer = 0;
+        timer = 0;//nustato laikmati i 0
     }
 }
 
-void Game::Reset()
+void Game::Reset()//zaidimo atstatymas i pradine busena
 {
-    snake.Reset();
-    food.Respawn(snake.body);
-    timer = 0;
-    timeStep = 1.0f / 60.0f;
+    snake.Reset();//atstato gyvate
+    food.Respawn(snake.body);//padeda maista
+    timer = 0;//nustato laikmati i 0
+    timeStep = 1.0f / 60.0f;//nustato laiko zingsni(60 fps)
 }
 
-void Game::HandleInput()
+void Game::HandleInput()//ivesties apdorojimas is klaviaturos
 {
     if (Keyboard::isKeyPressed(sf::Keyboard::Up) || Keyboard::isKeyPressed(Keyboard::W))
         snake.ChangeDirection(Direction::UP);

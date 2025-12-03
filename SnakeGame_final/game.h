@@ -2,16 +2,16 @@
 
 #include "Objects.h"
 
-class Game
+class Game//zaidimo klasse
 {
 public:
-    Snake snake;
-    Food food;
-    float timer;
-    float timeStep;
+    Snake snake;//gyvates objektas
+    Food food;//maisto objektas
+    float timer;//atnaujinimo laikmatis
+    float timeStep;//laiko zingsnis
 
-    Game();
-    void Update();
-    void Reset();
-    void HandleInput();
+    Game();//konstruktorius
+    void Update();//busenos atnaujinimas
+    void Reset();//zaidimo atstatymas
+    void HandleInput();//ivisties apdorojimas
 };
