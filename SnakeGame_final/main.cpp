@@ -9,37 +9,37 @@ using namespace sf;
 
 int main()
 {
-    srand(static_cast<unsigned>(time(nullptr)));
+    srand(static_cast<unsigned>(time(nullptr)));// atsitiktiniu skaiciu generatoriaus inicializacija
 
-    sf::RenderWindow window(VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT), "Snake Game");
-    window.setFramerateLimit(60);
+    sf::RenderWindow window(VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT), "Snake Game");//lango sukurimas
+    window.setFramerateLimit(60);//fps apribojimas 
 
-    sf::Font font;
+    sf::Font font;//srifto ikelimas
     if (!font.loadFromFile("C:/Windows/Fonts/arial.ttf"))
     {
-        return -1;
+        return -1;//isejimas klaidos atveju
     }
 
-    Game game;
+    Game game;//zaidimo objekto sukurimas
 
-    while (window.isOpen())
+    while (window.isOpen())//pagr zaidimo ciklas
     {
         Event event;
-        while (window.pollEvent(event))
+        while (window.pollEvent(event))//ivykiu apdorojimas
         {
-            if (event.type == Event::Closed)
-                window.close();
+            if (event.type == Event::Closed)//jei uzdaryti langa
+                window.close();//uzdaryti langa
         }
 
-        if (Keyboard::isKeyPressed(Keyboard::R))
+        if (Keyboard::isKeyPressed(Keyboard::R))//jei paspausti r
         {
-            game.Reset();
+            game.Reset();//atstatyti zaidima
         }
 
-        game.HandleInput();
-        game.Update();
+        game.HandleInput();//ivesties apdorojimas
+        game.Update();//zaidimo atnaujinimas
 
-        window.clear(Color::White);
+        window.clear(Color::White);//ekrano valymas 
 
         utils::DrawSnake(window, game.snake);
         utils::DrawFood(window, game.food);
