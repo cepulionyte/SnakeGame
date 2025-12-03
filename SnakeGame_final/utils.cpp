@@ -49,7 +49,7 @@ void utils::DrawGameOver(RenderWindow& window, const Font& font)//piesia game ov
     gameOverText.setFont(font);
     gameOverText.setString("GAME OVER!\nPress R to restart");
     gameOverText.setCharacterSize(32);
-    gameOverText.setFillColor(Color::Red);
+    gameOverText.setFillColor(Color::Magenta);
     gameOverText.setStyle(Text::Bold);
 
     FloatRect textRect = gameOverText.getLocalBounds();//gauna teksto ribas
