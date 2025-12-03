@@ -37,7 +37,7 @@ void utils::DrawUI(RenderWindow& window, const Snake& snake, const Font& font)//
     Text scoreText;//sukuria teksta taskams
     scoreText.setFont(font);//sriftas
     scoreText.setString("Score: " + to_string(snake.score));
-    scoreText.setCharacterSize(24);//srifto dydis
+    scoreText.setCharacterSize(26);//srifto dydis
     scoreText.setFillColor(Color::Magenta);
     scoreText.setPosition(10.f, 10.f);//pozicija virsutiniame kairiajame kampe
     window.draw(scoreText);//piesia teksta lange
