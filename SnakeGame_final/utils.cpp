@@ -11,7 +11,7 @@ void utils::DrawSnake(RenderWindow& window, const Snake& snake)//piesia snake la
         if (i == 0)
             segment.setFillColor(Color(255, 105, 180));//pink galva
         else
-            segment.setFillColor(Color(255, 182, 193));//pink kunas
+            segment.setFillColor(Color(255, 192, 203));//pink kunas
 
         segment.setPosition(//nustato segmento pozicija
             static_cast<float>(snake.body[i].x * CELL_SIZE),
