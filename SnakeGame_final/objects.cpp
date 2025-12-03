@@ -96,8 +96,5 @@ void Food::Respawn(const std::vector<Position>& snakeBody)
 
 bool Food::IsInSnake(const std::vector<Position>& snakeBody, const Position& pos)
 {
-    for (const auto& segment : snakeBody) {
-        if (segment == pos) return true;
-    }
-    return false;
+    return std::find(snakeBody.begin(), snakeBody.end(), pos) != snakeBody.end();
 }
